@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" href="static/styles/account.css">
+    <link href="https://db.onlinewebfonts.com/c/869ee3f760a416f2dadc427a61de209e?family=HSE+Sans" rel="stylesheet">
+    <style type="text/css">
+        A {
+    color: #0F2D69; /* Цвет ссылок */
+   }
+   A:visited {
+    color: #0F2D69; /* Цвет посещенных ссылок */
+   }
+   A:hover { 
+    text-decoration: underline; /* Добавляем подчеркивание при наведении курсора на ссылку */
+    color: #FFFFFF; /* Ссылка красного цвета */
+   }
+       </style>
+</head>
+<body>
+    <div class="main">
+        <div class = "top-block">
+            <div class = "logo">
+                <img src="static/images/logo2.svg" alt="">
+            </div>
+            <div class = "close-icon">
+                <a href="#"><img src="static/images/кнопка.svg" alt="Выход"></a>
+            </div>
+        </div>
+        <div class = "bottom-block">
+            <div class="big">
+                <div>
+                    <h1>Личный кабинет</h1>
+                </div>
+                    <div class="input-box">
+                        <input class = "name" type = "password" placeholder ="Имя пользователя">
+                    </div>
+                    <div class="button-mini">
+                        <button type="submit" class="change" onclick="location.href='change_password.html'">Сменить пароль</button>
+                        <button type="submit" class="change">Выйти</button>
+                    </div>
+                    <div class="link">
+                        <a class="lgn-link" href="mailto:hse.scheduler@mail.ru" >Служба поддержки</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

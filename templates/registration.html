@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="static/styles/registration.css">
+    <link href="https://db.onlinewebfonts.com/c/869ee3f760a416f2dadc427a61de209e?family=HSE+Sans" rel="stylesheet">
+</head>
+<body>
+    <div class="left-block"></div>
+    <div class="right-block">
+        <div class="big">
+            <div>
+                <h1>Регистрация</h1>
+            </div>
+            <form method="post" action="/registration">
+                <div class="inputs">
+                    {% if message %}
+                    <p align="center" style="color:red;">{{ message }}</p>
+                    {% endif %}
+                    <div class="input-box">
+                        <input class = "name" name="username" type = "text" placeholder ="Имя пользователя">
+                    </div>
+                    <div class="input-box">
+                        <input class = "name" name="email" type = "text" placeholder ="Электронная почта">
+                    </div>
+                    <div class="input-box">
+                        <input class = "name" name="password1" type = "password" placeholder ="Пароль">
+                    </div>
+                    <div class="input-box">
+                        <input class = "name" name="password2" type = "password" placeholder ="Повтор пароля">
+                    </div>
+                </div>
+                <div class="button-mini">
+                    <button type="submit" class="change">Зарегистрироваться</button>
+                </div>
+                <div class="block-links">
+                    <p>
+                        <a class="lgn-link" href="{{ url_for('welcome') }}"> Назад</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HSEapp</title>
+    <link rel="stylesheet" href="static/styles/style.css">
+    <link href="https://db.onlinewebfonts.com/c/869ee3f760a416f2dadc427a61de209e?family=HSE+Sans" rel="stylesheet">
+    
+</head>
+
+<body>
+    <div class="left-block"></div>
+    <div class = "right-block">
+        <div class="main">
+            <div class="logo">
+                <img src="static/images/HSE_Logo.png" alt="">
+                <h1>HSE<br>Scheduler</h1>
+            </div>
+            <div class="lgn-block">
+                <div class="lgn-box">
+                    <form method="post" action="/">
+                        {% if message %}
+                        <p align="center" style="color:red;">{{ message }}</p>
+                        {% endif %}
+                        <div class="input-box">
+                            <input type="text" name="email" id="email" placeholder="Эл. почта" class="input" >
+                            <img class ="icon-people" src="static/images/people.png" alt="">
+                        </div>
+                        <div class="input-box">
+                            <input type="password" name="password" id="password" placeholder="Пароль" class="input" >
+                            <img class ="icon-password" src="static/images/password.png" alt="">
+                        </div>
+                        <div class="button-mini">
+                            <input type="submit" class="btn" value="Войти">
+                        </div>
+                    </form>
+                    <div class="block-links">
+                        <p>
+                            <a class="lgn-link" href="{{ url_for('forgotten_password') }}"> Забыли пароль?</a>
+                        </p>
+                        <p>
+                            <a class="lgn-link" href="{{ url_for('registration') }}"> Зарегистрироваться</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

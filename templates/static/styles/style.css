@@ -1,0 +1,270 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "HSE Sans";
+}
+
+body{
+    display: flex;
+    min-height: 100vh;
+    background: #fff;
+    overflow: hidden;
+}
+.right-block{
+    float:right;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    display:flex;
+    width: 60%;
+    background-repeat:no-repeat;
+    background-position: center center;
+}
+.left-block{
+    float:left;
+    width: 40%;
+    background-image: url(../images/background_main.svg);
+
+}
+
+.main{
+    width: 600px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    
+}
+
+.lgn-block .lgn-box{
+    flex-direction: column;
+    gap:24;
+    padding: 60px 100px;
+}
+.main .logo {
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+.main .logo img {
+    width: 100px;
+    height: 100px;
+}
+.main .logo h1{
+    font-size: 55px;
+    text-align:left;
+    color:rgb(19, 15, 105);
+    font-family: 'HSE Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 55px;
+    line-height: 46px;
+    display: flex;
+    align-items: center;
+    color: #130F69;
+
+
+
+}
+.lgn-block{
+    background: rgba(35, 74, 153, 0.44);
+    border-radius: 40px;
+
+background: rgba(35, 74, 153, 0.44);
+position:relative;
+top: 30px;
+width: 550px;
+height: 458px;
+
+}
+
+
+.main .input-box {
+    position: relative;
+   width: 100%;
+   height: 50px;
+   margin: 30px 0px;
+}
+.input-box .input{
+
+
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 0.5px solid rgba(197, 197, 197, 0.5);
+    border-radius: 25px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.695);
+    background: #FFFFFF;
+    align-items: center;
+    text-align: center;
+    padding-left: 80px;
+    padding-right: 80px;
+
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 31px;
+letter-spacing: 0.04em;
+transform: rotate(0.02deg);
+
+
+}
+.input-box input::placeholder{
+    color: rgba(126, 126, 126, 0.5);
+}
+.icon-people{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+}
+.icon-password{
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+}
+.main .btn{
+
+
+box-sizing: border-box;
+padding: 10px 15px;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+
+gap: 70px;
+background: #234A99;
+box-shadow: 5px 10px 10px rgba(0, 0, 5, 0.25);
+border-radius: 10px;
+align-items: center;
+text-align: center;
+cursor: pointer;
+border: 0.5px solid #0F2C68;
+
+
+
+
+
+
+/* Войти */
+width: 254px;
+height: 49px;
+font-family: 'HSE Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 31px;
+letter-spacing: 0.04em;
+
+color: #FFFFFF;
+
+
+}
+
+.input-box .input-code{
+
+
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 0.5px solid rgba(197, 197, 197, 0.5);
+    border-radius: 25px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 24px;
+    color: rgba(0, 0, 0, 0.715);
+    background: #FFFFFF;
+    align-items: center;
+    text-align: center;
+    padding-left: 20px;
+    padding-right: 20px;
+
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 31px;
+letter-spacing: 0.04em;
+transform: rotate(0.02deg);
+
+
+}
+
+.main .button-mini{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    
+}
+.main .button-mini-code{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 75px;
+
+    
+}
+.main .block-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin: 35px;
+    flex-direction: column;
+}
+.lgn-box h2 {
+
+font-weight: 400;
+font-size: 30px;
+line-height: 31px;
+display: flex;
+justify-content: center;
+text-align: center;
+letter-spacing: 0.04em;
+margin-bottom: 70px;
+margin-top: 20px;
+color: #130F69;
+
+
+
+
+}
+
+.lgn-link{
+    font-family: 'HSE Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 31px;
+text-align: center;
+letter-spacing: 0.04em;
+color: rgba(255, 255, 255, 0.39);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    color: rgba(87, 87, 87, 0.51);
+
+
+
+}
+.lgn-link:hover {
+    color: #FFFFFF;
+}
