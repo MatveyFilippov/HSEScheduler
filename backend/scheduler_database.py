@@ -1,8 +1,6 @@
 import sqlite3
 import backend
 import hashlib
-# connection.close()
-# connection.commit()
 
 
 class Keys:

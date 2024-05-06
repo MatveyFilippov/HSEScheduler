@@ -4,15 +4,20 @@ from email.message import EmailMessage
 import random
 import string
 import re
-# EMAIL_ACCOUNT.quit()
+import logging
+
+
+LOGGER = logging.getLogger(f'{backend.LOGGER_NAME}.EmailPackage')
 
 
 try:
-    EMAIL_ACCOUNT = smtplib.SMTP(backend.EMAIL_HOST, backend.EMAIL_PORT)
-    EMAIL_ACCOUNT.starttls()
-    EMAIL_ACCOUNT.login(backend.EMAIL_LOGIN, backend.EMAIL_PASSWORD)
+    temp_email_connection = smtplib.SMTP(backend.EMAIL_HOST, backend.EMAIL_PORT)
+    temp_email_connection.starttls()
+    temp_email_connection.login(backend.EMAIL_LOGIN, backend.EMAIL_PASSWORD)
+    temp_email_connection.quit()
 except Exception as ex:
-    raise Exception("Failed connect with Mail: %s" % ex)
+    LOGGER.exception(ex)
+    raise ConnectionError("Failed connect with Mail: %s" % ex)
 
 EMAIL_PATTERN = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
 
@@ -21,33 +26,47 @@ class EmailMsg:
     def __init__(self, email_to: str, title: str, body: str):
         if not re.match(EMAIL_PATTERN, email_to):
             raise ValueError(f"'email_to': '{email_to}' is not looks like email address")
+
+        try:
+            self.email_connection = smtplib.SMTP(backend.EMAIL_HOST, backend.EMAIL_PORT)
+            self.email_connection.starttls()
+            self.email_connection.login(backend.EMAIL_LOGIN, backend.EMAIL_PASSWORD)
+        except Exception as e:
+            raise ConnectionError("Failed connect with Mail: %s" % e)
+
         self.message = EmailMessage()
         self.message["From"] = backend.EMAIL_LOGIN
         self.message["To"] = email_to
         self.message["Subject"] = title
         self.message.set_content(body)
 
+    def __del__(self):
+        try:
+            self.email_connection.quit()
+        except Exception as e:
+            LOGGER.exception(e)
+
     def send(self):
-        EMAIL_ACCOUNT.sendmail(
+        self.email_connection.sendmail(
             from_addr=self.message.get("From"),
             to_addrs=self.message.get("To"),
             msg=self.message.as_string()
         )
 
     @property
-    def title(self):
+    def title(self) -> str:
         return self.message.get("Subject")
 
     @property
-    def to_addr(self):
+    def to_addr(self) -> str:
         return self.message.get("To")
 
     @property
-    def from_addr(self):
+    def from_addr(self) -> str:
         return self.message.get("From")
 
     @property
-    def body(self):
+    def body(self) -> str:
         return self.message.get_content()
 
 

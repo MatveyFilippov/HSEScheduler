@@ -10,7 +10,7 @@ STATIC_FOLDER_PATH: Final = os.path.join(TEMPLATES_FOLDER_PATH, "static")
 PATH_TO_DATA_FOLDER: Final = "HSESchedulerData"
 os.makedirs(PATH_TO_DATA_FOLDER, exist_ok=True)
 
-PROJECT_HOST: Final = "85.193.90.158"
+PROJECT_HOST: Final = "localhost"  # "85.193.90.158"
 PROJECT_PORT: Final = "1212"
 
 LOGGER_NAME: Final = "HSESchedulerLogs"

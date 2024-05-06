@@ -6,7 +6,7 @@ from backend import scheduler_database, scheduler_email
 app = Flask(
     __name__,
     static_folder=backend.STATIC_FOLDER_PATH,
-    template_folder=backend.TEMPLATES_FOLDER_PATH
+    template_folder=backend.TEMPLATES_FOLDER_PATH,
 )
 
 
@@ -51,8 +51,6 @@ def forgotten_password():
             secret_email_code = scheduler_email.send_checking_code_while_reset_password(email)
         except ValueError:
             return render_template('forgottenPassword.html', message="Проверьте корректность почты")
-        except Exception as ex:
-            return render_template('forgottenPassword.html', message=str(ex))
 
         user_while_password_changing[email] = secret_email_code
 
@@ -140,8 +138,6 @@ def registration():
             secret_email_code = scheduler_email.send_checking_code_while_registration(email)
         except ValueError:
             return render_template('registration.html', message="Проверьте корректность почты")
-        except Exception as ex:
-            return render_template('registration.html', message=str(ex))
 
         user_while_registration[email] = {
             'encrypted_password': scheduler_database.get_encrypt_string(password1),
@@ -203,8 +199,5 @@ def temp_main_window():
 
 
 if __name__ == '__main__':
-    try:
-        print(f"http://{backend.PROJECT_HOST}:{backend.PROJECT_PORT}")
-        app.run(host=backend.PROJECT_HOST, port=backend.PROJECT_PORT)
-    finally:
-        scheduler_email.EMAIL_ACCOUNT.quit()
+    print(f"http://{backend.PROJECT_HOST}:{backend.PROJECT_PORT}")
+    app.run(host=backend.PROJECT_HOST, port=backend.PROJECT_PORT)
