@@ -26,7 +26,7 @@
                 <img src="static/images/logo2.svg" alt="">
             </div>
             <div class = "close-icon">
-                <a href="#"><img src="static/images/кнопка.svg" alt="Выход"></a>
+                <a href="{{ url_for('calendar') }}"><img src="static/images/кнопка.svg" alt="Выход"></a>
             </div>
         </div>
         <div class = "bottom-block">
@@ -34,16 +34,20 @@
                 <div>
                     <h1>Личный кабинет</h1>
                 </div>
-                    <div class="input-box">
-                        <input class = "name" type = "password" placeholder ="Имя пользователя">
-                    </div>
+                <input class="name" type="text" placeholder="Имя пользователя" value="{{ username|default('') }}">
+                <form method="GET" action="{{ url_for('rewrite_password') }}">
                     <div class="button-mini">
-                        <button type="submit" class="change" onclick="location.href='change_password.html'">Сменить пароль</button>
+                        <button type="submit" class="change">Сменить пароль</button>
+                    </div>
+                </form>
+                <form method="GET" action="{{ url_for('logout') }}">
+                    <div class="button-mini">
                         <button type="submit" class="change">Выйти</button>
                     </div>
-                    <div class="link">
-                        <a class="lgn-link" href="mailto:hse.scheduler@mail.ru" >Служба поддержки</a>
-                    </div>
+                </form>
+                <div class="link">
+                    <a class="lgn-link" href="mailto:hse.scheduler@yandex.ru" >Служба поддержки</a>
+                </div>
             </div>
         </div>
     </div>

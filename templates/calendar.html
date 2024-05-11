@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}
+    Calendar
+{% endblock title %}
+{% block body %}
+<div class="container">
+    <div id="calendar"></div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const calendarEl = document.getElementById('calendar');
+    const calendar = new FullCalendar.Calendar(calendarEl, {
+        locale: 'ru',
+        initialView: 'dayGridWeek',
+        headerToolbar: {
+            left: 'prev,next',
+            center: 'title',
+            right: 'dayGridMonth,dayGridWeek,dayGridDay'
+        },
+
+        events : [
+        {% for event in events %}
+        {
+            title : '{{event.title}}',
+            description : '{{event.description}}',
+            color : '{{event.color}}',
+            file : '{{event.file}}',
+            start : '{{event.start}}',
+            end : '{{event.end}}',
+            url : '{{event.url}}',
+            },
+        {% endfor %}
+        ],
+      });
+      calendar.render();
+    });
+</script>
+{% endblock body %}

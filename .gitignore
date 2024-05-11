@@ -9,3 +9,4 @@
 /templates/.DS_Store
 /templates/__pycache__/
 /Service_CreatedBy_SSH_ProjectDelivery.service
+/ssh_project_delivery.py

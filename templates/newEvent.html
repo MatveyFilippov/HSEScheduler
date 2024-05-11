@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}
+    Add Event
+{% endblock title %}
+{% block body %}
+    <div class="container">
+        {% if message %}
+        <p align="center" style="color:red;">{{ message }}</p>
+        {% endif %}
+        <form action="/add_new_event" method="POST">
+            <div class="form-group">
+              <input type="text" class="form-control" name ="title" id="title" placeholder="Введите название задачи" maxlength="30">
+            </div>
+            <div class="form-group">
+              <textarea type="text" class="form-control" name ="description" id="description" placeholder="Введите описание" maxlength="250" rows="5" cols="33"></textarea>
+            </div>
+            <div class="form-group">
+              <input list="List" type="text" class="form-control" name ="color" id="color" placeholder="Выберите цвет">
+              <datalist id="List">
+                  <option value="pink"></option>
+                  <option value="green"></option>
+                  <option value="blue"></option>
+                  <option value="yellow"></option>
+              </datalist>
+            </div>
+            <div class="form-group">
+                <input type="url" class="form-control" name="url" id="url" placeholder="Добавьте ссылку">
+            </div>
+            <div class="form-group">
+                <label for="file">Добавьте файл</label>
+                <input type="file" class="form-control" name="file" id="file" accepts=".jpg, .jpeg, .png">
+            </div>
+            <div class="form-group">
+              <label for="start">Дата и время начала</label>
+              <input type="text" class="form-control" name="start" id="start" placeholder="Введите в формате гггг-мм-дд чч:мм">
+            </div>
+            <div class="form-group">
+                <label for="end">Дата и время окончания</label>
+                <input type="text" class="form-control" name="end" id="end" placeholder="Введите в формате гггг-мм-дд чч:мм">
+            </div>
+            <a><button type="submit" class="btn btn-primary">Добавить</button></a>
+          </form>
+    </div>
+{% endblock body %}

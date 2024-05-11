@@ -1,0 +1,54 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "HSE Sans";
+}
+.nav-link{
+    color:rgb(19, 15, 105);
+    font-family: 'HSE Sans';
+    font-style: normal;
+    font-weight: 400;
+}
+.nav-item{
+    color:rgb(19, 15, 105);
+    font-family: 'HSE Sans';
+    font-style: normal;
+    font-weight: 400;
+}
+.btn btn-outline-dark my-2 my-sm-0{
+    color:rgb(19, 15, 105);
+    font-family: 'HSE Sans';
+    font-style: normal;
+}
+.btn-primary:hover {
+    color: #212529;
+    background-color: #52bebe;
+    border-color: #8ad3d3
+}
+
+.form-control {
+    resize: none;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+    background-image: url("/static/images/icons8-календарь-24.svg");
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    background: url("/static/images/addfile.svg") no-repeat 5px 6px;
+    background-color: #fff;
+    padding: 0px 5px 0px 20px;
+    background-color: #fff;
+    height: 30px;
+    width: 1%;
+    border: 1px solid #fff;
+    border-radius: 0.25rem;
+    font-family: 'HSE Sans';
+    color: #7E7E7E;
+    color-scheme: #7E7E7E;
+    color: #fff;
+    font-size: 16px;
+}
