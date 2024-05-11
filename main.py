@@ -228,7 +228,7 @@ def add_new_event():
         color = request.form.get('color')
         if color == '':
             err_msg = "Заполните поле 'цвет'"
-        file = request.form.get('file')
+        file = request.form.get('file')  # TODO: бесполезный файл
         start = request.form.get('start')
         if start == '':  # TODO: много траблов с временем
             err_msg = "Заполните поле 'Дата и время начала'"
@@ -236,7 +236,7 @@ def add_new_event():
         if not start:
             err_msg = "Заполните дату 'начала' по формату 'гггг-мм-дд чч:мм'"
         end = request.form.get('end')
-        url = request.form.get('url')
+        url = request.form.get('url')  # TODO: бесполезный ссылка
         if end == '':
             end = start
         else:
@@ -276,7 +276,7 @@ def event(event_id):
         color = request.form.get('color')
         if color == '':
             err_msg = "Заполните поле 'цвет'"
-        file = request.form.get('file')
+        file = request.form.get('file')  # TODO: бесполезный файл
         start = request.form.get('start')
         if start == '':  # TODO: много траблов с временем
             err_msg = "Заполните поле 'Дата и время начала'"
@@ -284,7 +284,7 @@ def event(event_id):
         if not start:
             err_msg = "Заполните дату 'начала' по формату 'гггг-мм-дд чч:мм'"
         end = request.form.get('end')
-        url = request.form.get('url')
+        url = request.form.get('url')  # TODO: бесполезный ссылка
         if end == '':
             end = start
         else:
