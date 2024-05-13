@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.5.0/sql.js"></script>
+  <title>Календарь привычек</title>
+  <link rel="stylesheet" href="static/styles/style_tracker.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/styles/base.css">
+  <script src="https://kit.fontawesome.com/59a0da900e.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.css">
+  <link href="https://db.onlinewebfonts.com/c/869ee3f760a416f2dadc427a61de209e?family=HSE+Sans" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.11/index.global.min.js"></script>
+</head>
+
+{% extends 'base.html' %}
+{% block title %}
+    Трекер привычек
+{% endblock title %}
+{% block body %}
+<div class="calendar-container">
+  <div class="calendar-header">
+    <button class="prev-month">&lt;</button>
+    <span class="month-year"></span>
+    <button class="next-month">&gt;</button>
+  </div>
+  <div class="calendar-body">
+    <div class="calendar-days-of-week">
+      <span>Пн</span>
+      <span>Вт</span>
+      <span>Ср</span>
+      <span>Чт</span>
+      <span>Пт</span>
+      <span>Сб</span>
+      <span>Вс</span>
+    </div>
+    <div class="calendar-days"></div>
+  </div>
+  <div class="selected-days-count">Выполнено: 0 </div>
+  <div class="habit-button-container">
+    <input type="text" class="habit-button" placeholder="Выберите привычку" readonly>
+    <button class="habit-button-toggle">&#9776;</button>
+  </div>
+  <form id="habit-form">
+    <input type="text" name="habit" placeholder="Добавить привычку">
+    <input type="submit" value="Сохранить">
+  </form>
+  <!-- Контейнер для списка привычек -->
+  <ul class="habit-list"></ul>
+</div>
+<a href="calendar.html">
+  <img class="image1" src="static/assets/white_circle_placeholder.png" alt="alt text" />
+</a>
+<a href="add.html">
+  <img class="image11"src="static/assets/white_circle_placeholder.png" alt="alt text" />
+</a>
+<a href="calendar.html">
+  <img class="image4" src="static/assets/settings_gear_outline.png" alt="alt text" />
+</a>
+<a href="add.html">
+  <img class="image5" src="static/assets/black_square.png" alt="alt text" />
+</a>
+<a href="index.html">
+  <img class="image2" src="static/assets/dark_blue_circle.png" alt="alt text" />
+</a>
+<a href="index.html">
+  <img class="image3" src="static/assets/icon_water_glass.png" alt="alt text" />
+</a>
+<div class="root">
+  <h1 class="title">HSE Scheduler</h1>
+  <img class="image" src="static/assets/blue_university_logo.png" alt="alt text" />
+  <img class="image2" src="static/assets/dark_blue_circle.png" alt="alt text" />
+  <img class="image3" src="static/assets/icon_water_glass.png" alt="alt text" />
+</div>
+<div class="image-container">
+  <img id="image100">
+  <p id="caption"></p>
+</div>
+<div class="rect2"></div>
+<a href="account.html">
+  <img class="image111" src="static/assets/black_background.png" alt="alt text" />
+  <script src="script.js"></script>
+</a>
+{% endblock body %}

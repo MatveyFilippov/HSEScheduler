@@ -1,0 +1,432 @@
+.calendar-container {
+    width: 400px;
+    height: 520px;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    margin-left: 80px; /* Отступ слева */
+    margin-top: 75px; /* Отступ сверху */
+    font-family: 'HSE Sans';
+
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .calendar-month-year {
+    font-weight: bold;
+    font-family: 'HSE Sans';
+  }
+  
+  .calendar-days-of-week {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f2f2f2;
+    padding: 5px;
+    font-family: 'HSE Sans';
+  }
+  
+  .calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+    padding: 5px;
+    font-family: 'HSE Sans';
+    
+  }
+  .calendar-days .calendar-day {
+    height: 43px;
+    font-family: 'HSE Sans';
+  }
+  .calendar-day {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc;
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'HSE Sans';
+  }
+  
+  .calendar-day--current {
+    background-color: #ccc;
+    font-family: 'HSE Sans';
+  }
+  
+  .calendar-day--not-current {
+    color: #999;
+  }
+  
+  .calendar-day--selected {
+    border-color: #000;
+    background-color: #6E96E7;
+  }
+  
+  .selected-days-count {
+    padding: 10px;
+    text-align: center;
+    font-family: 'HSE Sans';
+  }
+
+
+
+
+
+  .image-container {
+    position: absolute;
+    top: 200px;
+    right: 365px;
+    bottom: 443px;
+    left: 960px;
+    width: 341px;
+    height: 306px;
+    font-family: 'HSE Sans';
+    text-align: center;
+    font-size: 25px;
+    
+  }
+
+
+  /* Стили для кнопки "Привычка" и списка привычек */
+
+  .habit-button-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    font-family: 'HSE Sans';   
+  }
+  
+  .habit-button {
+    width: 200px;
+    height: 30px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    font-family: 'HSE Sans';
+  }
+  
+  .habit-button-toggle {
+    margin-left: 5px;
+    cursor: pointer;
+    font-family: 'HSE Sans';
+  }
+  
+  .habit-list-container {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    max-width: 200px;
+    z-index: 999;
+    font-family: 'HSE Sans';
+  }
+  
+
+  
+  .habit-list-item {
+    cursor: pointer;
+    padding: 5px;
+  }
+  
+  .habit-list-item:hover {
+    background-color: #f2f2f2;
+  }
+  
+
+  
+  .caption{ 
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 1.55;
+    font-family: 'HSE Sans';
+    font-family: "Inter", Helvetica, Arial, serif;
+    color: black;
+
+   }
+ 
+  .image100 {
+   
+    top: 275px;
+    right: 316px;
+    bottom: 443px;
+    left: 984px;
+    width: 360px;
+    height: 380px;
+
+  }
+
+
+  
+  .title {
+    position: absolute;
+    top: 15px;
+    right: auto;
+    bottom: auto;
+    left: 118px;
+    display: flex;
+    align-items: center;
+    width: 188px;
+    height: 36px;
+    font: 700 28px/1.28 "Inter", Helvetica, Arial, serif;
+    color: #0f2d69;
+    font-family: 'HSE Sans';
+  }
+  .image {
+    position: absolute;
+    top: 10px;
+    right: 1534px;
+    bottom: 925px;
+    left: 25px;
+    width: 82px;
+    height: 82px;
+  }
+  .image1 {
+    position: absolute;
+    top: 700px;
+    right: 1129px;
+    bottom: 73px;
+    left: 320px;
+    width: 101px;
+    height: 99px;
+  }
+  .image11 {
+    position: absolute;
+    top: 700px;
+    right: 382px;
+    bottom: 73px;
+    left: 1000px;
+    width: 101px;
+    height: 99px;
+  }
+  .image2 {
+    position: absolute;
+    top: 685px;
+    right: 706px;
+    bottom: 62px;
+    left: 650px;
+    width: 124px;
+    height: 122px;
+    
+  }
+  .image3 {
+    position: absolute;
+    top: 710px;
+    right: 760px;
+    bottom: 86px;
+    left: 680px;
+    width: 63px;
+    height: 69px;
+  }
+  .image4 {
+    position: absolute;
+    top: 720px;
+    right: 1300px;
+    bottom: 95px;
+    left: 342px;
+    width: 57px;
+    height: 56px;
+  }
+  .image5 {
+    position: absolute;
+    top: 720px;
+    right: 400px;
+    bottom: 86px;
+    left: 1026px;
+    width: 65px;
+    height: 65px;
+  }
+
+  .image111 {
+    position: absolute;
+    top: 43px;
+    right: 140px;
+    bottom: 932px;
+    left: 1300px;
+    width: 49px;
+    height: 49px;
+  }
+  
+.rect2 {
+    position: absolute;
+    top: 170px;
+    right: 258px;
+    bottom: 321px;
+    left: 927px;
+    width: 410px;
+    height: 460px;
+
+    border-radius: 20px 20px 20px 20px;
+    outline: 1px solid black;
+    outline-offset: -1px;
+  }
+
+  .page-header {
+    text-align: center;
+    margin: 20px 0;
+    font-family: 'HSE Sans';
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color:rgb(19, 15, 105);
+    font-family: 'HSE Sans';
+    font-style: normal;
+  }
+  .image111 {
+    cursor: pointer;
+  }
+  .image11 {
+    cursor: pointer;
+  }
+  .image1 {
+    cursor: pointer;
+  }
+  .image4 {
+    cursor: pointer;
+  }
+  .image5 {
+    cursor: pointer;
+  }
+  .image2 {
+    cursor: pointer;
+  }
+  .image3 {
+    cursor: pointer;
+  }
+ 
+
+
+/* Стили поля ввода привычки */
+.habit-button {
+  width: 80%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-family: 'HSE Sans';
+}
+
+/* Стили кнопки переключения списка привычек */
+.habit-button-toggle {
+  width: 2rem;
+  height: 2rem;
+  background-color: #0f2d69;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-family: 'HSE Sans';
+}
+
+/* Стили контейнера списка привычек */
+
+
+/* Показывать список привычек при наведении */
+  .habit-list-container.active {
+    display: block;
+    font-family: 'HSE Sans';
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+ 
+    width: 400px;
+    height: 447px;
+    position: absolute;
+    top: calc(100% - 32rem);
+    left: 5.5rem;
+    font-family: 'HSE Sans';
+  }
+  
+  .habit {
+    width: 400px;
+    
+    padding: 20px;
+    font-family: 'HSE Sans';
+    border-radius: 5px;
+  }
+  
+  .habit h3 {
+    margin-bottom: 10px;
+    font-family: 'HSE Sans';
+  }
+  
+  .habit-list {
+    list-style-type: none;
+    padding-inline-start: 0;
+    font-family: 'HSE Sans';
+  }
+  
+  .habit-list li {
+    margin-bottom: 5px;
+    font-family: 'HSE Sans';
+  }
+  
+  form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'HSE Sans';
+  }
+  
+  input[type="text"] {
+    width: 80%;
+    padding: 5px;
+    margin-right: 10px;
+    font-family: 'HSE Sans';
+  }
+  
+  input[type="submit"] {
+    padding: 5px 10px;
+    background-color: #0f2d69;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-family: 'HSE Sans';
+  }
+
+
+  
+  .habit-name {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    font-family: 'HSE Sans';
+  }
+  
+
+
+    /* Стили для списка привычек */
+    .habit-list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 0;
+      font-family: 'HSE Sans';
+    }
+
+    /* Стили для кнопок привычек */
+    .habit-button {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* Скрывать список привычек по умолчанию */
+    .habit-list {
+      display: none;
+    }
+
+    /* Показывать список привычек при наличии класса "active" */
+    .habit-list.active {
+      display: block;
+    }

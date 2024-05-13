@@ -199,6 +199,11 @@ def calendar():
     return render_template('calendar.html', events=all_users[email].events)
 
 
+@app.route('/tracker')
+def tracker():
+    return render_template("tracker.html")
+
+
 def get_date_for_event(date_str: str) -> str | None:
     datetime_list = date_str.strip().split(" ")
     try:
